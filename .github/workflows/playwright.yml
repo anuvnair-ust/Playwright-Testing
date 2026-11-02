@@ -28,8 +28,7 @@ jobs:
           python -m pytest tests/ -v \
             --html=report.html \
             --self-contained-html \
-            --junitxml=results.xml \
-            --rerunfailures 3
+            --junitxml=results.xml
 
       - name: Upload test reports
         if: always()
