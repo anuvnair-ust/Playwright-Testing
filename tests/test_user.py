@@ -189,7 +189,9 @@ def test_native_dropdown(page):
 
 
 def test_checkboxes(page : Page):
-    page.goto("https://practice.expandtesting.com/checkboxes")
+    page.goto("https://practice.expandtesting.com/checkboxes",
+              wait_until="domcontentloaded",
+              timeout=15000)
 
     checkboxes = page.locator("input[type='checkbox']")
     first_checkbox = checkboxes.nth(0)

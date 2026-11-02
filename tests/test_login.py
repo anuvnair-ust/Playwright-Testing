@@ -2,6 +2,7 @@
 import pytest
 from playwright.sync_api import Page, expect
 from test_data.login_data import LOGIN_TEST_DATA
+
 @pytest.mark.parametrize("test_data", LOGIN_TEST_DATA)
 def test_login(page: Page, test_data: dict) -> None:
     page.goto("https://www.saucedemo.com/")
