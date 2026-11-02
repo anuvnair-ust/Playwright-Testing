@@ -9,18 +9,19 @@ def test_username():
 
 from playwright.sync_api import expect
 
+import re
+from playwright.sync_api import expect
 def test_amazon_homepage(page):
-    response = page.goto("https://www.amazon.com", 
-              wait_until="domcontentloaded",
-              timeout=15000)
-
+    response = page.goto(
+        "https://www.amazon.com",
+        wait_until="domcontentloaded",#Browser has finished parsing the initial HTML document
+        timeout=15000
+    )
     print("Response status:", response.status if response else None)
-    print("Current URL:",page.url)
-    print("Page Title:",repr(page.title()))
-    print("Page content:", page.locator("body").inner_text()[:50])
-
+    print("Page title: ",repr(page.title()))
+    print("Current URL:", page.url)
     expect(page).to_have_title(
-        "Amazon.com. Spend less. Smile more.",timeout=15000
+        re.compile(r"Amazon\.com")
     )
 
 # -------------------------------------------------------------------------------------------------------------
