@@ -1,0 +1,36 @@
+from pathlib import Path
+from playwright.sync_api import expect
+
+def test_popup_window(page):
+    # Step 1: Open the local popup practice html code
+    html_file = Path(__file__).with_name("popup_practice.html")
+    page.goto(html_file.resolve().as_uri())
+    # Step 2: Verify the original page
+    expect(page.get_by_role("heading", name="Popup Window Practice")
+           ).to_be_visible()
+    # Step 3: Register popup expectation before clicking
+    with page.expect_popup() as popup_info:
+        page.get_by_role(
+            "button", name="Open Popup"
+        ).click()
+
+    # Step 4: Capture the Popup page
+    popup = popup_info.value
+
+    # Step 5: Wait for popup page to load
+    popup.wait_for_load_state("domcontentloaded")
+
+    # Step 6: Verify the popup URL
+    expect(popup).to_have_url("https://example.com/")
+
+    # Step 7: Verify paragraph
+    expect(
+        popup.locator("p").first).to_contain_text("This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.")
+
+    # Step 8: Verify the Learn more link
+    expect(
+        popup.get_by_role("link",name="Learn more")
+    ).to_be_visible()
+
+    print("Popup test passed successfully")
+    

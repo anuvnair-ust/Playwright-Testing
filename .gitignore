@@ -1,0 +1,12 @@
+#Virtual environment
+.venv/
+venv/
+#Python cache
+pycache
+*.pyc
+.pytest_cache
+test_results/
+playwright-report/
+report.html
+.env
+.vscode/

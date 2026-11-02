@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Anu",
+        "email": "anu@o.io",
+        "address": "asddjkn,\niuwqhid,\nuguhi",
+        "status": false
+    },
+    {
+        "name": "John Smith",
+        "email": "john.smith@example.com",
+        "address": "42 Main Street, Springfield",
+        "status": true
+    },
+    {
+        "name": "Zoë O'Brien-Lee",
+        "email": "zoe.obrien+test@example.co.uk",
+        "address": "Flat 3, 18 Rue de la Paix, Paris",
+        "status": false
+    },
+    {
+        "name": "A",
+        "email": "a@b.co",
+        "address": "1",
+        "status": false
+    },
+    {
+        "name": "Long Name Long Name Long Name Long Name Long Name ",
+        "email": "long.email.address.for.testing@subdomain.example.org",
+        "address": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "status": true
+    }
+]
