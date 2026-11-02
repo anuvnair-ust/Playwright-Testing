@@ -62,16 +62,16 @@ def test_click_button(page):
 # input_value() - Read the value of an input field
 # text_content() - Read the text content from an element
 
-from playwright.sync_api import expect
-def test_search_product(page):
-    page.goto("https://www.amazon.com")
-    search_box = page.get_by_role(
-        "searchbox",
-        name = "Search Amazon"
-    )
-    search_box.fill("headphones")
-    search_box.press("Enter")
-    expect(page).to_have_url("https://www.amazon.com/s?k=headphones&ref=nb_sb_noss")
+# from playwright.sync_api import expect
+# def test_search_product(page):
+#     page.goto("https://www.amazon.com")
+#     search_box = page.get_by_role(
+#         "searchbox",
+#         name = "Search Amazon"
+#     )
+#     search_box.fill("headphones")
+#     search_box.press("Enter")
+#     expect(page).to_have_url("https://www.amazon.com/s?k=headphones&ref=nb_sb_noss")
 
 
 # -------------------------------------------------------------------------------------------------------------

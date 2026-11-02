@@ -10,3 +10,7 @@ playwright-report/
 report.html
 .env
 .vscode/
+
+# Test results
+*.png
+*.zip
