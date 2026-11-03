@@ -1,3 +1,14 @@
+#Reusable function
+
+#Function that you define once and call whenever you need it's
+#functionality 
+
+#Suppose you have this test:
+
+#Test1: Login and View Products
+#Test2: Loign and add product to the cart
+#Test3: Login and remove a product 
+
 from playwright.sync_api import Page, expect
 def login(page: Page, username: str, password: str) -> None:
     page.goto("https://www.saucedemo.com/")
@@ -6,6 +17,7 @@ def login(page: Page, username: str, password: str) -> None:
     page.locator('[data-test="login-button"]').click()
     page.wait_for_timeout(5000)
     expect(page).to_have_url("https://www.saucedemo.com/inventory.html")
+
 def test_login_and_view_products(page: Page):
     login(page, "standard_user", "secret_sauce")
     page.wait_for_timeout(5000)

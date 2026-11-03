@@ -1,3 +1,11 @@
+# iframe - It is a HTML element that embeds another document inside the webpage
+
+#Retries - Running a failed test again automatically.
+
+#First attempt -> Failed
+#second Attempt -> Passed
+
+
 import time
 from pathlib import Path
 from playwright.sync_api import expect
@@ -31,3 +39,22 @@ def test_payment_iframe(page):
     ).to_have_text("Payment form submitted successfully.")
     print("Iframe test passed successfully.")
     time.sleep(5)
+
+    #Playwright Debugging and Reporting 
+
+#Debugging - Helps us to identify and fix this problems
+#Reporting - It helps us understand and communicate
+#the result of our tests 
+
+#Several Tools to avoid this problems
+
+#1. Codegen - Records browser actions and generates 
+#automation code.
+
+#Login Page:
+#Inspect the username field
+#Find it's locator
+#Inspect the password field
+#Find it's locatir
+#Find the login button
+#Write the automation code 

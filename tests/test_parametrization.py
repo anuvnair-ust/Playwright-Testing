@@ -16,7 +16,7 @@ URL ="https://www.playwrightautomation.com/practice.html"
         ("Long Name " * 5, "long.email.address.for.testing@subdomain.example.org", "X" * 120,True)
     ],
     ids=["anu", "john-smith", "zoe-obrien-lee", "single-char", "long-values"])
-def test01(page, name, email, address, status):
+def test_paramterization_hardcoded(page, name, email, address, status):
     page.goto(URL,
               wait_until="domcontentloaded"
               )
@@ -44,7 +44,7 @@ ADDRESS_DATA = json.loads(
 @pytest.mark.parametrize(
     "data",ADDRESS_DATA,
     ids=["anu", "john-smith", "zoe-obrien-lee", "single-char", "long-values"])
-def test01(page, data):
+def test_parametrization_json(page, data):
     page.goto(URL,
               wait_until="domcontentloaded"
               )

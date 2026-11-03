@@ -6,8 +6,11 @@ def test_popup_window(page):
     html_file = Path(__file__).with_name("popup_practice.html")
     page.goto(html_file.resolve().as_uri())
     # Step 2: Verify the original page
-    expect(page.get_by_role("heading", name="Popup Window Practice")
-           ).to_be_visible()
+    expect(
+        page.get_by_role(
+            "heading", name="Popup Window Practice"
+            )
+        ).to_be_visible()
     # Step 3: Register popup expectation before clicking
     with page.expect_popup() as popup_info:
         page.get_by_role(
@@ -33,4 +36,21 @@ def test_popup_window(page):
     ).to_be_visible()
 
     print("Popup test passed successfully")
-    
+
+
+def test_username_input(page):
+    page.goto("https://www.playwrightautomation.com/practice.html")
+    name_input = page.get_by_placeholder("Enter your name")
+    name_input.fill("Vikas")
+    expect(name_input).to_have_value("Vikas")
+
+#CI-CD pipeline
+#Continuous Integrity and Continuous Depolyment or Delivery
+
+#With CI/CD:
+
+#Developer Changes Code -> Developer pushes code to github ->
+#GitHub actions starts automatically -> Install python dependencies
+#Install Playwright browsers -> Run Playwright tests ->
+#generate test reports -> Upload report and debugging artifacts 
+#Team reviews the results

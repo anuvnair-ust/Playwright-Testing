@@ -12,3 +12,4 @@ def test_successful_login(page: Page):
     expect(page).to_have_url(
         "https://www.saucedemo.com/inventory.html"
     )
+     # expect(page.get_by_text("Products", exact=True)).to_be_visible()
